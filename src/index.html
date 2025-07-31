@@ -3,10 +3,90 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Dudu 1</title>
     <link rel="stylesheet" href="./css/output.css" />
   </head>
   <body>
-    <h1>your code here</h1>
+    <!-- Dark Mode Toggle Button -->
+    <button
+      id="theme-toggle"
+      class="fixed top-4 right-4 z-50 p-2 bg-gray-200 dark:bg-gray-800 rounded-full shadow hover:scale-105 transition"
+      aria-label="Toggle Dark Mode"
+    >
+      🌙
+    </button>
+
+    <!-- Header Navbar -->
+    <header
+      class="w-full h-[84px] flex items-center justify-between px-[140px] border-b backdrop-blur-[40px] bg-white/70 dark:bg-black/70"
+    >
+      <!-- Logo (light & dark mode toggle) -->
+      <div class="flex items-center gap-[9.6px]">
+        <!-- <img -->
+        <!-- src="./assets/logo_light.png" -->
+        <!-- alt="Logo Light" -->
+        <!-- class="h-8 w-auto block dark:hidden" -->
+        <!-- /> -->
+        <!-- <img -->
+        <!-- src="./assets/logo_dark.png" -->
+        <!-- alt="Logo Dark" -->
+        <!-- class="h-8 w-auto hidden dark:block" -->
+        <!-- />
+          -->
+        <img src="./assets/logo_light.png" class="block dark:hidden" />
+        <img src="./assets/logo_dark.png" class="hidden dark:block" />
+      </div>
+
+      <!-- Center: Nav Links -->
+      <nav
+        class="flex gap-6 h-[36px] items-center text-black dark:text-white font-medium"
+      >
+        <a href="#" class="hover:text-orange-500 transition">About</a>
+        <a href="#" class="hover:text-orange-500 transition">Service</a>
+        <a href="#" class="hover:text-orange-500 transition">Projects</a>
+        <a href="#" class="hover:text-orange-500 transition">Testimonials</a>
+        <a href="#" class="hover:text-orange-500 transition">FAQ</a>
+      </nav>
+
+      <!-- Right: Call-to-Action Button -->
+      <div>
+        <button
+          class="bg-[#FF5722] text-white rounded-full px-6 py-2 text-sm font-semibold hover:brightness-110 transition"
+        >
+          Let’s Talk
+        </button>
+      </div>
+    </header>
+    <script>
+      // Grab the button
+      const toggleBtn = document.getElementById('theme-toggle');
+      const htmlEl = document.documentElement;
+
+      // Check local storage
+      if (localStorage.getItem('theme') === 'dark') {
+        htmlEl.classList.add('dark');
+      }
+
+      toggleBtn.addEventListener('click', () => {
+        // Toggle the class
+        htmlEl.classList.toggle('dark');
+
+        // Save preference
+        if (htmlEl.classList.contains('dark')) {
+          localStorage.setItem('theme', 'dark');
+          toggleBtn.textContent = '☀️';
+        } else {
+          localStorage.setItem('theme', 'light');
+          toggleBtn.textContent = '🌙';
+        }
+      });
+
+      // Set icon on first load
+      if (htmlEl.classList.contains('dark')) {
+        toggleBtn.textContent = '☀️';
+      } else {
+        toggleBtn.textContent = '🌙';
+      }
+    </script>
   </body>
 </html>
