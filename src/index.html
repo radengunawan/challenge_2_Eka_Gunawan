@@ -462,6 +462,152 @@
         </div>
       </div>
     </section>
+
+    <!-- Include Alpine.js -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+      defer
+    ></script>
+
+    <section class="w-full bg-white py-20 px-6" x-data="{ tab: 'fintech' }">
+      <div class="max-w-7xl mx-auto">
+        <!-- Heading -->
+        <div class="text-center space-y-4 mb-12">
+          <h2 class="text-3xl font-bold text-gray-900">
+            Built for Your Industry
+          </h2>
+          <p class="text-gray-600">
+            We’ve helped companies across industries launch smarter, faster, and
+            more securely.
+          </p>
+        </div>
+
+        <!-- Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-10">
+          <!-- Sidebar -->
+          <div class="flex flex-col gap-6 text-lg font-medium">
+            <button
+              @click="tab = 'fintech'"
+              :class="tab === 'fintech' ? 'text-black border-l-4 border-orange-500 pl-4' : 'text-gray-400 pl-4 border-l-4 border-transparent'"
+            >
+              Fintech
+            </button>
+            <button
+              @click="tab = 'ecommerce'"
+              :class="tab === 'ecommerce' ? 'text-black border-l-4 border-orange-500 pl-4' : 'text-gray-400 pl-4 border-l-4 border-transparent'"
+            >
+              E-Commerce
+            </button>
+            <button
+              @click="tab = 'healthcare'"
+              :class="tab === 'healthcare' ? 'text-black border-l-4 border-orange-500 pl-4' : 'text-gray-400 pl-4 border-l-4 border-transparent'"
+            >
+              Healthcare
+            </button>
+          </div>
+
+          <!-- Content -->
+          <div class="lg:col-span-3 space-y-6">
+            <!-- Text -->
+            <template x-if="tab === 'fintech'">
+              <p class="text-gray-700 text-lg">
+                We build secure, scalable, and compliant fintech solutions —
+                from digital wallets to core banking systems — tailored to
+                modern financial needs.
+              </p>
+            </template>
+            <template x-if="tab === 'ecommerce'">
+              <p class="text-gray-700 text-lg">
+                Boost your online sales with fast, reliable platforms designed
+                for seamless shopping experiences, inventory management, and
+                payment integration.
+              </p>
+            </template>
+            <template x-if="tab === 'healthcare'">
+              <p class="text-gray-700 text-lg">
+                Empowering healthcare providers with digital solutions that
+                improve patient care, ensure data privacy, and streamline
+                operational workflows.
+              </p>
+            </template>
+
+            <!-- Image -->
+            <div class="rounded-2xl overflow-hidden">
+              <img
+                x-show="tab === 'fintech'"
+                src="./assets/p3_fintech.png"
+                alt="Fintech"
+                class="w-full rounded-2xl transition-all duration-300"
+              />
+              <img
+                x-show="tab === 'ecommerce'"
+                src="./assets/p3_ecommerce.png"
+                alt="E-Commerce"
+                class="w-full rounded-2xl transition-all duration-300"
+              />
+              <img
+                x-show="tab === 'healthcare'"
+                src="./assets/p3_health.png"
+                alt="Healthcare"
+                class="w-full rounded-2xl transition-all duration-300"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="w-full bg-white py-20 px-6">
+      <div class="max-w-7xl mx-auto text-center space-y-6">
+        <h2 class="text-3xl font-bold text-gray-900">
+          From Vision to Launch! Projects We’re Proud Of
+        </h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Take a closer look at our recent work powering startups, enterprises,
+          and everything in between.
+        </p>
+      </div>
+
+      <!-- Portfolio Grid -->
+      <div
+        class="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto"
+      >
+        <!-- Card 1 -->
+        <div class="text-center">
+          <img
+            src="./assets/p4_porto1.png"
+            alt="Portfolio 1"
+            class="rounded-xl shadow-lg"
+          />
+          <p class="text-sm text-orange-500 mt-4 font-medium">Landing Page</p>
+          <h3 class="font-semibold text-gray-900 text-lg mt-1">Portofolio 1</h3>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="text-center">
+          <img
+            src="./assets/p4_porto2.png"
+            alt="Portfolio 2"
+            class="rounded-xl shadow-lg"
+          />
+          <p class="text-sm text-orange-500 mt-4 font-medium">Landing Page</p>
+          <h3 class="font-semibold text-gray-900 text-lg mt-1">Portofolio 2</h3>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="text-center">
+          <img
+            src="./assets/p4_porto3.png"
+            alt="Portfolio 3"
+            class="rounded-xl shadow-lg"
+          />
+          <p class="text-sm text-orange-500 mt-4 font-medium">Landing Page</p>
+          <h3 class="font-semibold text-gray-900 text-lg mt-1">Portofolio 3</h3>
+        </div>
+      </div>
+    </section>
+
     <!-- Contact Section -->
     <section class="w-full bg-white py-20 px-6">
       <div class="max-w-3xl mx-auto text-center space-y-6">
