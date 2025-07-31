@@ -7,86 +7,121 @@
     <link rel="stylesheet" href="./css/output.css" />
   </head>
   <body>
-    <!-- Dark Mode Toggle Button -->
-    <button
-      id="theme-toggle"
-      class="fixed top-4 right-4 z-50 p-2 bg-gray-200 dark:bg-gray-800 rounded-full shadow hover:scale-105 transition"
-      aria-label="Toggle Dark Mode"
-    >
-      🌙
-    </button>
+    <!-- Header -->
+    <header class="w-full bg-white py-6 px-6 lg:px-12 shadow-sm">
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center gap-2">
+          <img src="./assets/logo_light.png" alt="Logo" />
+          <!-- <span class="font-bold text-xl text-gray-900">Your Logo</span> -->
+        </div>
 
-    <!-- Header Navbar -->
-    <header
-      class="w-full h-[84px] flex items-center justify-between px-[140px] border-b backdrop-blur-[40px] bg-white/70 dark:bg-black/70"
-    >
-      <!-- Logo (light & dark mode toggle) -->
-      <div class="flex items-center gap-[9.6px]">
-        <!-- <img -->
-        <!-- src="./assets/logo_light.png" -->
-        <!-- alt="Logo Light" -->
-        <!-- class="h-8 w-auto block dark:hidden" -->
-        <!-- /> -->
-        <!-- <img -->
-        <!-- src="./assets/logo_dark.png" -->
-        <!-- alt="Logo Dark" -->
-        <!-- class="h-8 w-auto hidden dark:block" -->
-        <!-- />
-          -->
-        <img src="./assets/logo_light.png" class="block dark:hidden" />
-        <img src="./assets/logo_dark.png" class="hidden dark:block" />
-      </div>
-
-      <!-- Center: Nav Links -->
-      <nav
-        class="flex gap-6 h-[36px] items-center text-black dark:text-white font-medium"
-      >
-        <a href="#" class="hover:text-orange-500 transition">About</a>
-        <a href="#" class="hover:text-orange-500 transition">Service</a>
-        <a href="#" class="hover:text-orange-500 transition">Projects</a>
-        <a href="#" class="hover:text-orange-500 transition">Testimonials</a>
-        <a href="#" class="hover:text-orange-500 transition">FAQ</a>
-      </nav>
-
-      <!-- Right: Call-to-Action Button -->
-      <div>
-        <button
-          class="bg-[#FF5722] text-white rounded-full px-6 py-2 text-sm font-semibold hover:brightness-110 transition"
+        <!-- Menu -->
+        <nav
+          class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-800"
         >
-          Let’s Talk
-        </button>
+          <a href="#" class="hover:text-orange-500">About</a>
+          <a href="#" class="hover:text-orange-500">Service</a>
+          <a href="#" class="hover:text-orange-500">Projects</a>
+          <a href="#" class="hover:text-orange-500">Testimonials</a>
+          <a href="#" class="hover:text-orange-500">FAQ</a>
+        </nav>
+
+        <!-- CTA Button -->
+        <div class="hidden md:block">
+          <button
+            class="bg-gradient-to-r from-orange-400 to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white font-semibold py-2 px-6 rounded-full shadow-md transition duration-300"
+          >
+            Let’s Talk
+          </button>
+        </div>
       </div>
     </header>
-    <script>
-      // Grab the button
-      const toggleBtn = document.getElementById('theme-toggle');
-      const htmlEl = document.documentElement;
 
-      // Check local storage
-      if (localStorage.getItem('theme') === 'dark') {
-        htmlEl.classList.add('dark');
-      }
+    <section class="relative w-full bg-white overflow-hidden pt-24 pb-16">
+      <div
+        class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center justify-between gap-10 relative z-10"
+      >
+        <!-- Left Side -->
+        <div class="flex-1 space-y-6 z-20">
+          <h1
+            class="text-4xl md:text-5xl font-bold leading-tight text-gray-900"
+          >
+            Your Tech Partner for<br />
+            <span class="text-orange-500">Smarter Growth</span>
+          </h1>
+          <p class="text-gray-700 text-lg">
+            We deliver tailored IT solutions to help you scale with speed and
+            confidence.
+          </p>
+          <button
+            class="bg-gradient-to-r from-orange-400 to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white font-semibold py-3 px-8 rounded-full shadow-md transition duration-300"
+          >
+            Let’s Talk
+          </button>
+        </div>
 
-      toggleBtn.addEventListener('click', () => {
-        // Toggle the class
-        htmlEl.classList.toggle('dark');
+        <!-- Right Side -->
+        <div class="flex-1 relative z-10 lg:static">
+          <img
+            src="./assets/phone_light.png"
+            alt="Phone Hero"
+            class="w-full max-w-[550px] mx-auto lg:absolute lg:top-[-120px] lg:right-[-40px] lg:z-10"
+          />
+        </div>
+      </div>
+    </section>
+    <!-- Partner Logos + Stats Section -->
+<section class="w-full bg-white py-20 px-6">
+  <div class="max-w-7xl mx-auto text-center space-y-14">
 
-        // Save preference
-        if (htmlEl.classList.contains('dark')) {
-          localStorage.setItem('theme', 'dark');
-          toggleBtn.textContent = '☀️';
-        } else {
-          localStorage.setItem('theme', 'light');
-          toggleBtn.textContent = '🌙';
-        }
-      });
+    <!-- Top: Trusted by... -->
+    <h3 class="text-lg font-semibold text-gray-800">
+      Trusted by Global Innovators & Leading Brands
+    </h3>
 
-      // Set icon on first load
-      if (htmlEl.classList.contains('dark')) {
-        toggleBtn.textContent = '☀️';
-      } else {
-        toggleBtn.textContent = '🌙';
-      }
-    </script>
+    <!-- Logo Row -->
+    <div class="flex flex-wrap justify-center items-center gap-10 grayscale">
+      <img src="./assets/p2_upwork.png" alt="Upwork" class="h-6 object-contain" />
+      <img src="./assets/p2_zoom.png" alt="Zoom" class="h-6 object-contain" />
+      <img src="./assets/p2_postman.png" alt="Postman" class="h-6 object-contain" />
+      <img src="./assets/p2_databricks.png" alt="Databricks" class="h-6 object-contain" />
+      <img src="./assets/p2_airbnb.png" alt="Airbnb" class="h-6 object-contain" />
+      <img src="./assets/p2_dropbox.png" alt="Dropbox" class="h-6 object-contain" />
+      <img src="./assets/p2_paypal.png" alt="PayPal" class="h-6 object-contain opacity-50" />
+    </div>
+
+    <!-- Title + Subtext -->
+    <div class="space-y-4 max-w-2xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900">
+        End-to-End IT Solutions That Drive Results
+      </h2>
+      <p class="text-gray-600">
+        From strategy to execution, we deliver solutions that grow your business.
+      </p>
+    </div>
+
+    <!-- Stat Bubbles -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-10">
+      <!-- Bubble 1 -->
+      <div class="rounded-full border border-gray-200 py-10 px-6 bg-gray-50 text-center">
+        <p class="text-3xl font-bold text-orange-500">50+</p>
+        <p class="mt-2 font-medium text-gray-800">Projects Delivered</p>
+      </div>
+      <!-- Bubble 2 -->
+      <div class="rounded-full border border-gray-200 py-10 px-6 bg-gray-50 text-center">
+        <p class="text-3xl font-bold text-orange-500">5+</p>
+        <p class="mt-2 font-medium text-gray-800">Years of Experience</p>
+      </div>
+      <!-- Bubble 3 -->
+      <div class="rounded-full border border-gray-200 py-10 px-6 bg-gray-50 text-center">
+        <p class="text-3xl font-bold text-orange-500">10+</p>
+        <p class="mt-2 font-medium text-gray-800">Industry Awards Won</p>
+      </div>
+      <!-- Bubble 4 -->
+      <div class="rounded-full border border-gray-200 py-10 px-6 bg-gray-50 text-center">
+        <p class="text-3xl font-bold text-orange-500">100%</p>
+        <p class="mt-2 font-medium text-gray-800">Client Satisfac
+
   </body>
 </html>
