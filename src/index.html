@@ -710,6 +710,132 @@
       </div>
     </section>
 
+    <!-- Include Alpine.js -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+      defer
+    ></script>
+
+    <section class="w-full bg-white py-20 px-6">
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10 items-start"
+      >
+        <!-- FAQ Left Side -->
+        <div class="lg:col-span-2 space-y-10">
+          <!-- Heading -->
+          <div>
+            <h2 class="text-3xl font-bold text-gray-900 leading-tight">
+              Need Help? Start<br />Here.
+            </h2>
+            <p class="text-gray-500 mt-2">
+              Everything you need to know — all in one place.
+            </p>
+          </div>
+
+          <!-- FAQ Accordion -->
+          <div class="space-y-4" x-data="{ open: 0 }">
+            <!-- Item 1 -->
+            <div class="border-b pb-4">
+              <button
+                @click="open = open === 1 ? 0 : 1"
+                class="flex justify-between items-center w-full text-left font-medium text-lg text-gray-900"
+              >
+                What services do you offer?
+                <span x-text="open === 1 ? '−' : '+'"></span>
+              </button>
+              <div x-show="open === 1" x-transition class="text-gray-600 mt-2">
+                We provide custom web/app development, cloud solutions, UX/UI
+                design, and more.
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="border-b pb-4">
+              <button
+                @click="open = open === 2 ? 0 : 2"
+                class="flex justify-between items-center w-full text-left font-medium text-lg text-gray-900"
+              >
+                How do I know if this is right for my business?
+                <span x-text="open === 2 ? '−' : '+'"></span>
+              </button>
+              <div x-show="open === 2" x-transition class="text-gray-600 mt-2">
+                Book a free consult — we’ll assess your goals and recommend the
+                right approach.
+              </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="border-b pb-4">
+              <button
+                @click="open = open === 3 ? 0 : 3"
+                class="flex justify-between items-center w-full text-left font-medium text-lg text-gray-900"
+              >
+                How much does a project cost?
+                <span x-text="open === 3 ? '−' : '+'"></span>
+              </button>
+              <div x-show="open === 3" x-transition class="text-gray-600 mt-2">
+                Every project is different. Let’s talk about your needs to get a
+                tailored estimate.
+              </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="border-b pb-4">
+              <button
+                @click="open = open === 4 ? 0 : 4"
+                class="flex justify-between items-center w-full text-left font-medium text-lg text-gray-900"
+              >
+                How long does it take?
+                <span x-text="open === 4 ? '−' : '+'"></span>
+              </button>
+              <div x-show="open === 4" x-transition class="text-gray-600 mt-2">
+                Depends on scope — but we always prioritize quality and
+                deadlines.
+              </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="border-b pb-4">
+              <button
+                @click="open = open === 5 ? 0 : 5"
+                class="flex justify-between items-center w-full text-left font-medium text-lg text-gray-900"
+              >
+                Can I start with a small project first?
+                <span x-text="open === 5 ? '−' : '+'"></span>
+              </button>
+              <div x-show="open === 5" x-transition class="text-gray-600 mt-2">
+                Absolutely. We often begin with MVPs or pilot projects.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Card -->
+        <!-- <div -->
+        <!-- class="bg-orange-500 text-white rounded-2xl p-8 space-y-4 shadow-lg" -->
+        <!-- > -->
+        <div
+          class="text-white rounded-2xl p-8 space-y-4 shadow-lg"
+          style="background-color: #cc4e32"
+        >
+          <h3 class="text-2xl font-bold leading-snug">
+            Let’s talk it<br />through
+          </h3>
+          <p class="text-white/90">book a free consultation with our team.</p>
+          <img
+            src="./assets/p6_lets.png"
+            alt="Consultation"
+            class="w-full rounded-xl"
+          />
+          <button
+            class="bg-black text-white font-semibold w-full text-center py-3 mt-4 rounded-full hover:bg-gray-800 transition"
+          >
+            Free Consultation
+          </button>
+        </div>
+      </div>
+    </section>
+
     <!-- Contact Section -->
     <section class="w-full bg-white py-20 px-6">
       <div class="max-w-3xl mx-auto text-center space-y-6">
